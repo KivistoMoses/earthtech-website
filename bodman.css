@@ -584,3 +584,45 @@
     box-sizing: border-box !important;
   }
 }
+
+/* Mobile Optimization for Hero / Header Section */
+@media screen and (max-width: 768px) {
+  /* Reduce top header logo & tag line padding */
+  header, .header, nav {
+    padding: 10px 16px !important;
+  }
+
+  .header h1, header h1, .logo {
+    font-size: 1.6rem !important;
+  }
+
+  .header p, header p, .tagline {
+    font-size: 0.75rem !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  /* Compact the Hero Container */
+  .hero, .hero-section, header + section, div[class*="hero"] {
+    min-height: auto !important;
+    padding: 30px 16px !important;
+  }
+
+  /* Scale down huge heading text */
+  .hero h1, .hero-section h1, h1 {
+    font-size: 1.75rem !important;
+    line-height: 1.25 !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* Adjust subtext and button spacing */
+  .hero p, .hero-section p {
+    font-size: 0.9rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 20px !important;
+  }
+
+  .hero button, .hero .btn, .hero a.button {
+    padding: 10px 20px !important;
+    font-size: 0.95rem !important;
+  }
+}
