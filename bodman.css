@@ -501,28 +501,59 @@
 }
 
 
-/* Image responsiveness */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Mobile responsive layout */
-@media (max-width: 768px) {
-  /* Change grid/flex containers to stack vertically */
-  .services-container, 
-  .card-container,
-  .flex-container { 
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+/* Responsive Mobile Fix: Stacks cards into full-width rows */
+@media screen and (max-width: 768px) {
+  /* Force grid containers to single column */
+  div, section, main, .container, .grid, .services, .cards {
+    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
 
-  /* Make cards take full width on mobile */
-  .card, 
-  .service-card {
+  /* Force individual cards to span full width */
+  .card, .service, .item, div > div {
     width: 100% !important;
     max-width: 100% !important;
-    margin-bottom: 20px;
+    margin-bottom: 24px !important;
+  }
+
+  /* Make images expand nicely */
+  img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+  }
+}
+
+
+/* Mobile Optimization for Service Text Boxes */
+@media screen and (max-width: 768px) {
+  /* Prevent horizontal cut-offs on containers */
+  body, main, section, .container {
+    overflow-x: hidden;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    box-sizing: border-box;
+  }
+
+  /* Make text cards scale smoothly and stay within screen bounds */
+  .service-box, .card, div[class*="card"], div[class*="box"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 20px 16px !important;
+    margin: 0 0 16px 0 !important;
+  }
+
+  /* Ensure text scales cleanly inside cards */
+  .service-box h3, .card h3, h2, h3, h4 {
+    font-size: 1.25rem !important;
+    word-wrap: break-word;
+  }
+
+  .service-box p, .card p, p {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+    word-wrap: break-word;
   }
 }
