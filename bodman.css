@@ -557,3 +557,30 @@
     word-wrap: break-word;
   }
 }
+
+
+/* Mobile Fix for About & Reach Containers */
+@media screen and (max-width: 768px) {
+  /* Ensure parent section gives breathing room */
+  .about-section, .reach-section, section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Make feature info boxes span 100% width cleanly */
+  .hq-box, .reach-card, div[class*="info"], div[class*="feature"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* Keep badge highlights contained */
+  span, div {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
