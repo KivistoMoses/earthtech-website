@@ -499,3 +499,30 @@
 .direct-contacts a:hover {
   color: #2563eb;
 }
+
+
+/* Image responsiveness */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mobile responsive layout */
+@media (max-width: 768px) {
+  /* Change grid/flex containers to stack vertically */
+  .services-container, 
+  .card-container,
+  .flex-container { 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* Make cards take full width on mobile */
+  .card, 
+  .service-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 20px;
+  }
+}
